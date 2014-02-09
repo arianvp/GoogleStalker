@@ -200,6 +200,11 @@ function initialize() {
             } catch (e) {
                 alert("You should try giving me a JSON file. I'd enjoy that.");
             }
+
+            if (!data.locations) {
+                alert("You don't seem to have any location data. Good for you, you ninja!. This applicaiton is useless for you as you can only be stalked if there is something to stalk.");
+                return;
+            }
             var fromDate   = new Date(+data.locations[data.locations.length-1].timestampMs);
             var toDate     = new Date(+data.locations[0].timestampMs);
 
