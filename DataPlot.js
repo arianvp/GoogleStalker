@@ -80,6 +80,7 @@ function initialize() {
         });
 
         var heatmap = new google.maps.visualization.HeatmapLayer({
+            dissipating: false,
             data: new google.maps.MVCArray(heatmapData)
         });
         var heatmapRadius = document.getElementById("heatmapRadius");
