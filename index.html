@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxSL4GrAJ41HbAF_Ypk3PkXRw_aOgm3yg&sensor=false&libraries=visualization ">
+    </script>
+    <script src="DataPlot.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <fieldset id="dialog">
+        <input type="file" id="files" name="files[]" onchange="">
+        <fieldset id="dates" disabled>
+            <input type="date" id="fromDate" name="fromDate">
+            <input type="date" id="toDate" name="toDate">
+            <input type="button" id="go" name="go" value="Go stalk me!">
+        </fieldset>
+        <fieldset id="settings" disabled>
+            <input type="checkbox" id="inVehicle" name="inVehicle">
+            <label for="inVehicle">in vehicle</label>
+            <input type="checkbox" id="onFoot" name="onFoot">
+            <label for="onFoot">on foot</label>
+            <input type="checkbox" id="onBicycle" name="onBicycle">
+            <label for="onBicycle">on bicycle</label>
+            <input type="checkbox" id="still" name="still">
+            <label for="still">still</label>
+            <input type="checkbox" id="tilting" name="tilting">
+            <label for="tilting">tilting</label>
+            <input type="checkbox" id="unknown" name="unknown">
+            <label for="unknown">unknown</label>
+            <br>
+            <input type="checkbox" id="trace" name="trace" checked>
+            <label for="trace">trace</label>
+            <input type="checkbox" id="heatmap" name="heatmap" checked>
+            <label for="heatmap">heatmap</label>
+            <input type="range" id="heatmapRadius" name="heatmapRadius" min="5" max="50" value="15">
+        </fieldset>
+    </fieldset>
+
+    <section id="about">
+        <h1>google stalker</h1>
+        <p>Google stalker is a tool to make you realize how much data google collects about you.</p>
+        <p>Google allows you to download all the data they have on you, but for the average person (non-techy), this data is just gibberish. Google stalker visualizes the Location data that Google provides using heatmaps, traces, and location markers.</p>
+        <h2>Privacy notice</h2>
+        Google stalker fully runs clientside. All the data you provide to Google stalker is only visible to the browser locally. If you don't trust me (maybe you shouldn't ;-)), you can download the code from my github and run it locally yourself. For this you will need a Google Maps API key  (Available here: ).
+
+		<h2>Instructions</h2>
+		<p>First get a copy of your location from  <a href="https://www.google.com/settings/takeout/custom">Google Takout</a> You do this by creating a new archive and just selecting the "Location History" checkbox</p>
+		<p>Once the archive is ready, download and unzip it. now hit the browse files button on this webpage and find the folder where you extracted the archive and select "LocationHistory.json"</p>
+		<p>Now select a date range that you're interested in. By default Google Stalker will select the biggest range available, but beware that we're crunching a lot of data, so the more data you import, the longer the loading times are gonna be</p>
+		<p>Hit "Go stalk me!" and wait.. The browser might seem irresponsive for a while because a lot of data (> 100k entries) are loaded into google maps. The bigger your date range, the slower the process</p>
+		<p>Finally a map will be presented to you. You can add markers like "in vehicle" and "on foot" through the settings. When you click on the markers, extra information will be provided</p>
+
+		<h2>Example</h2>
+		<img src="Screenshot.png">
+		<p>
+		In this screenshot you can clearly see what I was doing on the 5th of February.
+		I went to the university campus at 16:37. I was at the IKEA at 17:48 and seemed to have spent quite some time there. I was at the train station at 21:46... etc etc. </p>
+    </section>
+    <div id="map-canvas" />
+</body>
+
+</html>
