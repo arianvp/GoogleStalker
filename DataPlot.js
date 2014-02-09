@@ -3,6 +3,8 @@ var MY_MAPTYPE_ID = "custom_style";
 
 
 function initialize() {
+
+
     var mapOptions = {
         zoom: 2,
         center: new google.maps.LatLng(521582117/10000000, 51667033/10000000),
@@ -56,7 +58,9 @@ function initialize() {
     var map;
     function decorateMap(locationData) {
 
-        map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+        var g = document.createElement('div');
+        g.setAttribute("id", "map-canvas");
+        map = new google.maps.Map(g, mapOptions);
 
 
         map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
