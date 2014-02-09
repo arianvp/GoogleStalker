@@ -59,7 +59,7 @@ function initialize() {
     function decorateMap(locationData) {
 
         var g = document.createElement('div');
-        document.getElementById("map-canvas").removeClass("hidden");
+        document.getElementById("map-canvas").className = "";
         map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
 
