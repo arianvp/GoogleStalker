@@ -85,7 +85,12 @@ function initialize() {
         var heatmapRadius = document.getElementById("heatmapRadius");
 
         heatmap.set("radius", +heatmapRadius.value);
-        heatmap.set("dissipating", false);
+
+        var dissipatingEl = document.getElementById("dissipating");
+        dissipatingEl.addEventListener("click", function(e){
+            heatmap.set("dissipating", e.target.checked);
+        });
+        heatmap.set("dissipating", dissipatingEl.checked);
         heatmap.setMap(map);
 
         heatmapRadius.addEventListener("change", function(e){
