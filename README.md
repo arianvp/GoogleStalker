@@ -12,7 +12,7 @@ Google stalker fully runs clientside. All the data you provide to Google stalker
 
 ## Intructions
 
-First get a copy of your location from <a href="https://www.google.com/settings/takeout/custom">Google Takout</a> You do this by creating a new archive and just selecting the "Location History" checkbox
+First get a copy of your location from <a href="https://www.google.com/settings/takeout/custom">Google Takeout</a> You do this by creating a new archive and just selecting the "Location History" checkbox
 
 Once the archive is ready, download and unzip it. now hit the browse files button on this webpage and find the folder where you extracted the archive and select "LocationHistory.json"
 
